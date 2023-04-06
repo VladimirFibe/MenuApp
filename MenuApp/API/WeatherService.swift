@@ -1,8 +1,9 @@
-//
-//  WeatherService.swift
-//  MenuApp
-//
-//  Created by Vladimir on 04.04.2023.
-//
-
 import Foundation
+
+final class WeatherService {
+    func getWeather(completion: @escaping (Int) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(Int.random(in: (-30 ... 30)))
+        }
+    }
+}

@@ -1,8 +1,14 @@
-//
-//  InlineConfigurable.swift
-//  MenuApp
-//
-//  Created by Vladimir on 04.04.2023.
-//
-
 import Foundation
+
+public protocol InlineConfigurable {}
+
+extension NSObject: InlineConfigurable {}
+
+public extension InlineConfigurable {
+    @discardableResult
+    func apply(_ configurator: (Self) -> Void) -> Self {
+        configurator(self)
+        return self
+    }
+}
+

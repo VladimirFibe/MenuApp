@@ -1,8 +1,9 @@
-//
-//  DateService.swift
-//  MenuApp
-//
-//  Created by Vladimir on 04.04.2023.
-//
-
 import Foundation
+
+final class DateService {
+    func getDate(completion: @escaping (Date) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(Date())
+        }
+    }
+}

@@ -1,11 +1,7 @@
-//
-//  ImageViewerPresenter.swift
-//  Super easy dev
-//
-//  Created by Vladimir on 04.04.2023
-//
+import UIKit
 
 protocol ImageViewerPresenterProtocol: AnyObject {
+    func viewDidLoaded()
 }
 
 class ImageViewerPresenter {
@@ -20,4 +16,8 @@ class ImageViewerPresenter {
 }
 
 extension ImageViewerPresenter: ImageViewerPresenterProtocol {
+    func viewDidLoaded() {
+        let image = interactor.getImageForCurrentTemperature()
+        view?.showImage(image: image)
+    }
 }
